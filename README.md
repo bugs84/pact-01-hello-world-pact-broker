@@ -21,5 +21,16 @@ for exchange of the artifacts.
     - then verify, that contracts are uploaded to http://localhost:9292/
     - note: pactBrokerUrl can be changed in build.gradle.kts file
 - Go to [Producer application](https://github.com/bugs84/pact-01-hello-world-02-producer)
-  - run test e.g `gradlew test --tests "cz.vondr.pact.provider.FirstProviderTestContractExchangedViaPactBroker"`
+  - run test e.g `gradlew test --tests "cz.vondr.pact.provider.ArticlesConsumerTest"`
   - note: pactBrokerUrl can be changed in the test
+
+
+## Exercise
+Change implementation. In a way, that Consumer do not list all articles, when need know "articlesCount"
+It means: Change Application It will not call http method, which list all articles. But will call new http call, which will return only count of articles.
+  1. Change ConsumerTest, that it will work in this new way 
+  2. Consumer Implementation will not call http method, which list all articles. But will call new http call, which will return only count of articles. 
+  3. Run Producer Test - it will fail
+  4. Implement missing Producer Test according to contract
+  5. Fix Producer implementation 
+  6. Everything is working - new behaviour is implemented. 
